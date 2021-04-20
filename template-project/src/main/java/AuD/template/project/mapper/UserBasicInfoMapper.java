@@ -1,7 +1,7 @@
 package AuD.template.project.mapper;
 
 
-import AuD.template.project.model.entity.User;
+import AuD.template.project.model.entity.UserBasicInfo;
 import org.apache.ibatis.session.ResultHandler;
 import org.springframework.stereotype.Repository;
 
@@ -15,10 +15,10 @@ import org.springframework.stereotype.Repository;
  * @Version 1.0
  */
 @Repository
-public interface UserMapper {
+public interface UserBasicInfoMapper {
 
-    public void getAllInfo(ResultHandler<User> resultHandler);
+    public void getAllInfo(ResultHandler<UserBasicInfo> resultHandler);
 
-    public int errorSqlDML(User user);
+    public int errorSqlDML(UserBasicInfo userBasicInfo);
 
 }

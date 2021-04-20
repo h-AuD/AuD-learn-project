@@ -1,7 +1,10 @@
 package AuD.template.project.test;
 
 import AuD.template.project.core.constant.ServerReturnCode;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.codec.digest.Md5Crypt;
 import org.junit.jupiter.api.Test;
+import sun.security.provider.MD5;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,7 +61,7 @@ public class FilePath_test {
         if(ServerReturnCode.PARAMETER_ERROR instanceof Enum){
             System.out.println("yes");
         }
-
+        System.out.println(DigestUtils.md5Hex("DA860B55-AE89-4244-B595-2AF67705AF52"));
         long l=Runtime.getRuntime().totalMemory();
         System.out.println(l);
         long f=Runtime.getRuntime().freeMemory();

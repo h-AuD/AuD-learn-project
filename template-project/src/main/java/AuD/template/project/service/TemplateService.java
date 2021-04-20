@@ -1,8 +1,8 @@
 package AuD.template.project.service;
 
 import AuD.component.common.server.ServerResultHandle;
-import AuD.template.project.mapper.UserMapper;
-import AuD.template.project.model.entity.User;
+import AuD.template.project.mapper.UserBasicInfoMapper;
+import AuD.template.project.model.entity.UserBasicInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.result.DefaultResultContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,22 +24,21 @@ import java.util.List;
 public class TemplateService {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserBasicInfoMapper userBasicInfoMapper;
 
 
     public ServerResultHandle doHandle(){
-        List<User> result = new ArrayList<>();
-        userMapper.getAllInfo((resultContext -> {
-            DefaultResultContext<User> defaultResultContext = (DefaultResultContext<User>) resultContext;
+        List<UserBasicInfo> result = new ArrayList<>();
+        userBasicInfoMapper.getAllInfo((resultContext -> {
+            DefaultResultContext<UserBasicInfo> defaultResultContext = (DefaultResultContext<UserBasicInfo>) resultContext;
             result.add(defaultResultContext.getResultObject());
             log.info("{}",defaultResultContext.getResultCount());
         }));
-
         return ServerResultHandle.success().data(result);
     }
 
     public ServerResultHandle doSqlError(){
-        userMapper.errorSqlDML(null);
+        userBasicInfoMapper.errorSqlDML(null);
         return ServerResultHandle.success();
     }
 

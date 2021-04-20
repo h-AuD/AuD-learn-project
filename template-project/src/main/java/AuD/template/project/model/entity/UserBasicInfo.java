@@ -8,12 +8,12 @@ import java.time.LocalDateTime;
  * Description: TODO
  *
  * @author AuD/胡钊
- * @ClassName User
+ * @ClassName UserBasicInfo
  * @date 2021/4/13 17:42
  * @Version 1.0
  */
 @Data
-public class User {
+public class UserBasicInfo {
 
     private Integer id;
 

@@ -1,4 +1,4 @@
-CREATE TABLE `USER` (
+CREATE TABLE `USER_BASIC_INFO` (
   `ID` int(11) NOT NULL COMMENT '主键',
   `NAME` varchar(50) NOT NULL unique key COMMENT '名称',
   `AGE` int(3) NOT NULL COMMENT '年龄',

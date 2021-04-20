@@ -1,7 +1,9 @@
 package AuD.template.project.core.filter;
 
 
+import AuD.component.common.server.ServerResultHandle;
 import AuD.template.project.core.exception.BusinessException;
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
@@ -34,7 +36,7 @@ public class AuthFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         }else {
             log.info("auth failed {} ",signature);
-            throw new BusinessException(123,"认证失败");
+            servletResponse.getWriter().println(JSON.toJSONString(ServerResultHandle.of(123,"auth failed")));
         }
 
     }

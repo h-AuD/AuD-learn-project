@@ -1,5 +1,6 @@
 package AuD.template.project.test;
 
+import AuD.template.project.core.constant.ServerReturnCode;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -53,6 +54,11 @@ public class FilePath_test {
 
     @Test
     public void showUsage() {
+
+        if(ServerReturnCode.PARAMETER_ERROR instanceof Enum){
+            System.out.println("yes");
+        }
+
         long l=Runtime.getRuntime().totalMemory();
         System.out.println(l);
         long f=Runtime.getRuntime().freeMemory();

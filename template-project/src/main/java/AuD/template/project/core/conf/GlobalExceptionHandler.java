@@ -1,7 +1,7 @@
 package AuD.template.project.core.conf;
 
+import AuD.component.common.server.ServerResultHandle;
 import AuD.template.project.core.exception.BusinessException;
-import com.AuD.common.functions.server.ServerResultHandle;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -58,7 +58,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = Exception.class)
     public ServerResultHandle handleException(Exception e){
-        if(!(e instanceof BadSqlGrammarException)){
+        if((e instanceof BadSqlGrammarException) || (e instanceof SQLException)){
             // sql 异常不输出日志,因为已经交给Aop处理
             log.error(format,LocalDateTime.now(),e.getMessage());
         }

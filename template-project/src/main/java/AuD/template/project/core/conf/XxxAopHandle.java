@@ -21,9 +21,9 @@ import java.util.List;
 @Slf4j
 @Aspect
 @Component
-public class SqlExceptionHandle {
+public class XxxAopHandle {
 
-    @Pointcut("this(AuD.template.project.mapper.UserMapper)")
+    @Pointcut("")
     public void pointCut(){}
 
     @AfterThrowing(value = "pointCut()",throwing = "e")

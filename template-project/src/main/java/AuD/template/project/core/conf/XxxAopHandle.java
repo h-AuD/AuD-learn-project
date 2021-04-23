@@ -23,14 +23,6 @@ import java.util.List;
 @Component
 public class XxxAopHandle {
 
-    @Pointcut("")
-    public void pointCut(){}
 
-    @AfterThrowing(value = "pointCut()",throwing = "e")
-    public void afterThrowing(JoinPoint joinPoint, Exception e){
-        //
-        final String name = joinPoint.getSignature().toLongString();
-        final List<Object> asList = Arrays.asList(joinPoint.getArgs());
-        log.error("方法:{},参数:{},发生错误,信息 ===>{}",name,asList,e.getMessage());
-    }
+
 }

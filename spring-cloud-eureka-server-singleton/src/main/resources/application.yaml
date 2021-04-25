@@ -1,2 +1,20 @@
+# 单机注册中心端口
 server:
-  port: 2000 # 单个的注册中心端口
+  port: 2000
+
+# eureka配置说明:
+## register-with-eureka ==> 表示不注册自己,默认为true,如果要做eureka集群,需要设置true
+## fetch-registry ==> 是否拉取server,与上述同理,默认为true,如果要做eureka集群,需要设置true
+## service-url ==> client注册地址,由Map维护,其中有个key为defaultZone
+### 访问该server,使用http://localhost:2000,而不是http://localhost:2000/eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:2000/eureka
+
+# 注册application才需要用到,如果不需要往注册中心注册,则下属配置可以不写,推荐写上
+spring:
+  application:
+    name: singleton-eureka-server

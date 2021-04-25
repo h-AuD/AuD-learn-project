@@ -2,9 +2,18 @@
 server:
   port: 8000
 
-
-
 # 注册application才需要用到,如果不需要往注册中心注册,则下属配置可以不写,推荐写上
 spring:
   application:
-    name: singleton-eureka-server
+    name: eureka-client-account
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 286393118
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:2000/eureka
+

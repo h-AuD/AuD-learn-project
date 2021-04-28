@@ -2,7 +2,7 @@ package AuD.template.project.controller;
 
 
 import AuD.component.common.server.ServerResultHandle;
-import AuD.template.project.core.constant.ServerReturnCode;
+import AuD.template.project.core.constant.ServerResponseStatusCode;
 import AuD.template.project.core.conf.PropertyConfig;
 import AuD.template.project.service.TemplateService;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,7 @@ public class TemplateController {
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     public ServerResultHandle testGet(){
         log.info("{},{},{}",propertyConfig.getName(),propertyConfig.getAge(),propertyConfig.getList());
-        return ServerResultHandle.of(ServerReturnCode.PARAMETER_ERROR.getCode(), ServerReturnCode.PARAMETER_ERROR.getMessage());
+        return ServerResultHandle.of(ServerResponseStatusCode.PARAMETER_ERROR.getCode(), ServerResponseStatusCode.PARAMETER_ERROR.getMessage());
     }
 
     @GetMapping(value = "/error/sql")

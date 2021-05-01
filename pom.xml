@@ -21,6 +21,12 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
+    <modules>
+        <module>template-project</module>
+        <module>spring-cloud-eureka-server-singleton</module>
+        <module>spring-cloud-client-account</module>
+    </modules>
+
     <description>
         该项目用于管理所有springboot相关的demo,可以做版本仲裁中心
     </description>

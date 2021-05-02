@@ -25,6 +25,7 @@
         <module>template-project</module>
         <module>eureka-server-1001</module>
         <module>eureka-client-consumer-1002</module>
+        <module>eureka-client-provider-1003</module>
     </modules>
 
     <description>

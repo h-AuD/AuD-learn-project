@@ -23,8 +23,8 @@
 
     <modules>
         <module>template-project</module>
-        <module>spring-cloud-eureka-server-singleton</module>
-        <module>spring-cloud-client-account</module>
+        <module>eureka-server-1001</module>
+        <module>eureka-client-consumer-1002</module>
     </modules>
 
     <description>

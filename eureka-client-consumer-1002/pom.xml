@@ -30,6 +30,11 @@
         </dependency>
 
         <dependency>
+            <groupId>AuD.component</groupId>
+            <artifactId>commons-function</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>

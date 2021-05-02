@@ -1,5 +1,7 @@
 package AuD.eureka.client.controller;
 
+import AuD.component.common.server.ServerResultHandle;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,4 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/consumer")
 public class ConsumerController {
+
+    @GetMapping(value = "/remote")
+    public ServerResultHandle remoteCallApi(){
+        return null;
+    }
+
 }

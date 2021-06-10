@@ -1,6 +1,6 @@
 # AuD-learn-project
 
-> 用于学习springboot等框架的demo和项目结构 
+> Java学习项目工程 -- 包括学习过程、笔记等等
 
 ***构建前提***
 

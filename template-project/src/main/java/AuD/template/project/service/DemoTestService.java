@@ -21,7 +21,7 @@ import java.util.List;
  */
 @Slf4j
 @Service
-public class TemplateService {
+public class DemoTestService {
 
     @Autowired
     private UserBasicInfoMapper userBasicInfoMapper;

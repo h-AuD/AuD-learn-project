@@ -4,7 +4,7 @@ package AuD.template.project.controller;
 import AuD.component.common.server.ServerResultHandle;
 import AuD.template.project.core.constant.ServerStatusCode;
 import AuD.template.project.core.conf.PropertyConfig;
-import AuD.template.project.service.TemplateService;
+import AuD.template.project.service.DemoTestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,10 +25,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/template")
 @Slf4j
-public class TemplateController {
+public class DemoTestController {
 
     @Autowired
-    private TemplateService templateService;
+    private DemoTestService demoTestService;
 
     @Autowired
     private PropertyConfig propertyConfig;
@@ -41,7 +41,7 @@ public class TemplateController {
 
     @GetMapping(value = "/error/sql")
     public ServerResultHandle testExecuteErrorSql(){
-        return templateService.doSqlError();
+        return demoTestService.doSqlError();
     }
 
 

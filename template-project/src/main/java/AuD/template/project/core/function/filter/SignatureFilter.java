@@ -1,8 +1,7 @@
-package AuD.template.project.core.filter;
+package AuD.template.project.core.function.filter;
 
 import AuD.template.project.core.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;

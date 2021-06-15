@@ -4,11 +4,11 @@ package AuD.template.project.core.constant;
  * Description: 返回码列表
  *
  * @author AuD/胡钊
- * @ClassName ServerResponseStatusCode
+ * @ClassName ServerStatusCode
  * @date 2021/1/19 11:09
  * @Version 1.0
  */
-public enum ServerResponseStatusCode {
+public enum ServerStatusCode {
 
     /**
      * 2030 === 参数错误
@@ -19,7 +19,7 @@ public enum ServerResponseStatusCode {
     private Integer code;
     private String message;
 
-    ServerResponseStatusCode(Integer code, String message){
+    ServerStatusCode(Integer code, String message){
         this.code = code;
         this.message = message;
     }

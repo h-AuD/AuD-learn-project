@@ -1,6 +1,6 @@
 package AuD.template.project.test;
 
-import AuD.template.project.core.constant.ServerResponseStatusCode;
+import AuD.template.project.core.constant.ServerStatusCode;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.jupiter.api.Test;
 
@@ -56,7 +56,7 @@ public class FilePath_test {
     @Test
     public void showUsage() {
 
-        if(ServerResponseStatusCode.PARAMETER_ERROR instanceof Enum){
+        if(ServerStatusCode.PARAMETER_ERROR instanceof Enum){
             System.out.println("yes");
         }
         System.out.println(DigestUtils.md5Hex("DA860B55-AE89-4244-B595-2AF67705AF52"));

@@ -1,4 +1,4 @@
-package AuD.template.project.core.listener;
+package AuD.template.project.core.function.listener;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

@@ -22,9 +22,6 @@
     <version>1.0.0</version>
 
     <modules>
-        <module>eureka-server-1001</module>
-        <module>eureka-client-consumer-1002</module>
-        <module>eureka-client-provider-1003</module>
     </modules>
 
     <description>
@@ -42,7 +39,6 @@
         <lombok.version>1.18.20</lombok.version>
         <spring.cloud.eureka.client.version>3.0.2</spring.cloud.eureka.client.version>
         <spring.cloud.eureka.server.version>3.0.2</spring.cloud.eureka.server.version>
-        <google.guava.vaersion>30.1-jre</google.guava.vaersion>
     </properties>
 
     <dependencyManagement>
@@ -60,16 +56,12 @@
                 <version>${commons.function.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${google.guava.vaersion}</version>
-            </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+                <optional>true</optional>
             </dependency>
 
             <!-- eureka-client -->

@@ -12,17 +12,16 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
+        <version>2.4.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>AuD.learn.project</groupId>
-    <artifactId>parent</artifactId>
+    <groupId>AuD.ms.project</groupId>
+    <artifactId>ms-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <modules>
-        <module>template-project</module>
         <module>eureka-server-1001</module>
         <module>eureka-client-consumer-1002</module>
         <module>eureka-client-provider-1003</module>
@@ -37,6 +36,7 @@
         <!-- 指定编译版本,maven默认1.5 -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
         <mybatis.spring.boot.start.varsion>2.1.4</mybatis.spring.boot.start.varsion>
         <commons.function.version>1.0.0</commons.function.version>
         <lombok.version>1.18.20</lombok.version>
@@ -47,7 +47,7 @@
 
     <dependencyManagement>
         <dependencies>
-
+            <!-- mybatis启动器 -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>

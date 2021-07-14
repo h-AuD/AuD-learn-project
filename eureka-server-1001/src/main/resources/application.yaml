@@ -2,11 +2,12 @@
 server:
   port: 1001
 
-# eureka配置说明:
-## register-with-eureka ==> 表示不注册自己,默认为true,如果要做eureka集群,需要设置true
-## fetch-registry ==> 是否拉取server,与上述同理,默认为true,如果要做eureka集群,需要设置true
-## service-url ==> client注册地址,由Map维护,其中有个key为defaultZone
-### 访问该server,使用http://localhost:2000,而不是http://localhost:2000/eureka
+############################## eureka配置说明 #############################################
+# register-with-eureka ==> 表示不注册自己,默认为true,如果要做eureka集群,需要设置true
+# fetch-registry ==> 是否拉取server,与上述同理,默认为true,如果要做eureka集群,需要设置true
+# service-url ==> client注册地址,由Map维护,其中有个key为defaultZone
+## 访问该server,使用http://localhost:1001,而不是http://localhost:1001/eureka
+##########################################################################################
 eureka:
   client:
     register-with-eureka: false

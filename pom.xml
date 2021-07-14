@@ -35,7 +35,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <mybatis.spring.boot.start.varsion>2.1.4</mybatis.spring.boot.start.varsion>
-        <commons.function.version>1.0.0</commons.function.version>
+        <common.function.version>1.0.0</commons.function.version>
         <lombok.version>1.18.20</lombok.version>
         <spring.cloud.eureka.client.version>3.0.2</spring.cloud.eureka.client.version>
         <spring.cloud.eureka.server.version>3.0.2</spring.cloud.eureka.server.version>
@@ -51,9 +51,9 @@
             </dependency>
 
             <dependency>
-                <groupId>AuD.component</groupId>
-                <artifactId>commons-function</artifactId>
-                <version>${commons.function.version}</version>
+                <groupId>AuD.common</groupId>
+                <artifactId>common-function</artifactId>
+                <version>${common.function.version}</version>
             </dependency>
 
 

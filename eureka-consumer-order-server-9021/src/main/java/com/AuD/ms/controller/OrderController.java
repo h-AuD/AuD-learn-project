@@ -53,6 +53,15 @@ public class OrderController {
 
     private final static String URL = "http://%s%s";
 
+    /**
+     * 一个简单的RPC服务call,即通过IP+port. <br>
+     * 缺陷:  <br>
+     * 1.假如stock server有多个节点,那么通过IP call 显示的很麻烦: 需要维护一个IP列表 & IP发送变化,相应的代码需要做调整,耦合性比较强. <br>
+     * - 可以通过配置Nginx来解决上述问题. <br>
+     * - 但是对于同一个系统而言(某一个系统更具业务差分多个model),配置Nginx即麻烦又显得没有必要. <br>
+     * - eg.如果服务比较多(成百上千),nginx.config文件会很庞大,这样就无形的增加维护成本.
+     * @return
+     */
     @GetMapping(value = "/do/general")
     public String handleOrder(){
         // == 字符拼接 "http://localhost:9011/stock/do"
@@ -61,7 +70,10 @@ public class OrderController {
         return "下单success & call stock_server result:"+result;
     }
 
-
+    /**
+     *
+     * @return
+     */
     @GetMapping(value = "/do/using_sn")
     public String handleOrderUsingServerName(){
         // == 字符拼接 "http://eureka-provider-stock-service/stock/do"

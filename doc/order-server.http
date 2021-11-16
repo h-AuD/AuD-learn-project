@@ -1,0 +1,11 @@
+### 通过IP call API
+GET http://127.0.0.1:9021/order/do/general
+
+### 通过服务名 call API
+GET http://127.0.0.1:9021/order/do/using_sn
+
+
+
+
+
+

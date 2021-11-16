@@ -1,5 +1,6 @@
 package com.AuD.ms.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/stock")
+@Slf4j
 public class StockController implements InitializingBean {
 
     /**
@@ -37,6 +39,7 @@ public class StockController implements InitializingBean {
 
     @GetMapping(value = "/do")
     public String doStock(){
+        log.info("================ 库存-1 ==============");
         return result;
     }
 

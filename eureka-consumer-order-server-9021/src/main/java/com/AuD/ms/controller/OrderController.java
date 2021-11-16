@@ -67,11 +67,11 @@ public class OrderController {
         // == 字符拼接 "http://eureka-provider-stock-service/stock/do"
         final String url = String.format(URL, "eureka-provider-stock-service", "/stock/do");
         String result = restTemplate.getForObject(url, String.class);
-        String errorMsg;
+        String errorMsg = "";
         try {
             // ==== 使用restTemplateSimple通过服务名称来call API会出现错误,因为restTemplateSimple不能通过服务名称来获取IP
             errorMsg = restTemplateSimple.getForObject(url, String.class);
-            log.info("restTemplateSimple execute result:{} by server name");
+            log.info("restTemplateSimple execute result:{} by server name",errorMsg);
         }catch (Exception e){
             e.printStackTrace();
             log.error("execute restTemplateSimple occur exception,and error info:"+e.getMessage());

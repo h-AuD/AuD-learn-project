@@ -12,76 +12,44 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.8</version>
+        <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>AuD.ms.project</groupId>
-    <artifactId>ms-parent</artifactId>
+    <artifactId>ms-version-control</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <modules>
+        <module>eureka-server-9091</module>
+        <module>eureka-provider-stock-server-9011</module>
+        <module>eureka-consumer-order-server-9021</module>
     </modules>
 
-    <description>
-        该项目用于管理所有springboot相关的demo,可以做版本仲裁中心
-    </description>
+    <!--
+        Note:
+        1.spring cloud Hoxton 对应的springboot版本是 小于等于 2.3.x。(使用2.4.x会报错)
+        2.spring cloud 2020.x 对应的springboot版本是 大于等于 2.4.x,并且移除了Netflix部分组件(eg.zuul等)
+         - 关于上述内容可以参加spring cloud 2020.x发布特性(GitHub)
+    -->
+    <description>基于Hoxton版本完成的spring cloud,主要使用Netflix开源的组件,充当版本仲裁中心角色</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- 指定编译版本,maven默认1.5 -->
+        <!-- 指定编译版本(1.8),maven默认1.5 -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
-        <mybatis.spring.boot.start.varsion>2.1.4</mybatis.spring.boot.start.varsion>
-        <common.function.version>1.0.0</commons.function.version>
-        <lombok.version>1.18.20</lombok.version>
-        <spring.cloud.eureka.client.version>3.0.2</spring.cloud.eureka.client.version>
-        <spring.cloud.eureka.server.version>3.0.2</spring.cloud.eureka.server.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- mybatis启动器 -->
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.boot.start.varsion}</version>
-            </dependency>
 
-            <dependency>
-                <groupId>AuD.common</groupId>
-                <artifactId>common-function</artifactId>
-                <version>${common.function.version}</version>
-            </dependency>
-
-
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <optional>true</optional>
-            </dependency>
-
-            <!-- eureka-client -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-                <version>${spring.cloud.eureka.client.version}</version>
-            </dependency>
-            <!-- eureka-server -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-                <version>${spring.cloud.eureka.server.version}</version>
-            </dependency>
-
-            <!-- 导入spring-cloud-dependencies依赖,包含上述的 eureka-client & eureka-server -->
+            <!-- 导入spring-cloud-dependencies依赖 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2020.0.2</version>
+                <version>Hoxton.SR12</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -97,21 +65,13 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <configuration>
-                        <excludes>
-                            <exclude>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                            </exclude>
-                        </excludes>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
 
 
-
+    <!-- 阿里云maven仓库 -->
     <repositories>
         <repository>
             <id>aliyun</id>

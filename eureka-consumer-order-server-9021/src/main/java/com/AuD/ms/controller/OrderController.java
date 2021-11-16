@@ -23,6 +23,7 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class OrderController {
 
+    /* =================== RestTemplate bean 注册 =========================== */
     /**
      * {@link LoadBalanced}这个注解的作用就是将 RestTemplate 具有eureka client负载均衡功能,即可以通过服务名称来call server.
      * @param builder
@@ -44,13 +45,15 @@ public class OrderController {
         return builder.build();
     }
 
-
+    /** 普通的RestTemplate */
     @Autowired
     private RestTemplate restTemplateSimple;
 
+    /** 具有负载均衡功能的RestTemplate */
     @Autowired
     private RestTemplate restTemplate;
 
+    /** 请求的URL format,可以是IP或者server_name.eg:http://localhost:9011/stock/do OR http://eureka-provider-stock-service/stock/do */
     private final static String URL = "http://%s%s";
 
     /**

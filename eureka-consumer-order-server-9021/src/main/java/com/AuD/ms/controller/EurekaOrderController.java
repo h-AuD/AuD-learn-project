@@ -14,14 +14,14 @@ import org.springframework.web.client.RestTemplate;
  * Description: TODO
  *
  * @author AuD/胡钊
- * @ClassName OrderController
+ * @ClassName EurekaOrderController
  * @date 2021/11/16 16:15
  * @Version 1.0
  */
 @RestController
 @RequestMapping(value = "/order")
 @Slf4j
-public class OrderController {
+public class EurekaOrderController {
 
     /* =================== RestTemplate bean 注册 =========================== */
     /**

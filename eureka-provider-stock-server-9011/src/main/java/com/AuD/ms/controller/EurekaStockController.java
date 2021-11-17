@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
  * 1.this controller 设计不符合规范的,这里仅仅为了方便测试而已.
  *
  * @author AuD/胡钊
- * @ClassName StockController
+ * @ClassName EurekaStockController
  * @date 2021/11/16 15:45
  * @Version 1.0
  */
 @RestController
 @RequestMapping(value = "/stock")
 @Slf4j
-public class StockController implements InitializingBean {
+public class EurekaStockController implements InitializingBean {
 
     /**
      * 用于测试eureka客户端负载均衡.可以借助idea的dashboard启动多个this server(仅仅修改下port),serverName也是如此.

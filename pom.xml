@@ -91,6 +91,7 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- 导入spring-cloud-alibaba-dependencies依赖 -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>

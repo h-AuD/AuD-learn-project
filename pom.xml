@@ -4,27 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!--
-        springboot版本选择:
-        若是learn,可大胆使用最新版本
-        若是工作,则优先以team为主,其次可以参考https://mvnrepository.com/中的用户量,推荐使用RELEASE版本
-    -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.12</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
     <groupId>AuD.ms.project</groupId>
-    <artifactId>ms-version-control</artifactId>
+    <artifactId>ms-model-manage</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <modules>
-        <module>eureka-server-9091</module>
-        <module>eureka-provider-stock-server-9011</module>
-        <module>eureka-consumer-order-server-9021</module>
     </modules>
 
     <!--
@@ -33,98 +18,8 @@
         2.spring cloud 2020.x 对应的springboot版本是 大于等于 2.4.x,并且移除了Netflix部分组件(eg.zuul等)
          - 关于上述内容可以参加spring cloud 2020.x发布特性(GitHub)
     -->
-    <description>基于Hoxton版本完成的spring cloud,主要使用Netflix开源的组件,充当版本仲裁中心角色</description>
+    <description>this pom is only model manage config</description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- 指定编译版本(1.8),maven默认1.5 -->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <spring-cloud-dependencies.version>2020.0.4</spring-cloud-dependencies.version>
-        <spring-cloud-alibaba-dependencies.version>2021.1</spring-cloud-alibaba-dependencies.version>
-        <mybatis.starter.version>2.1.4</mybatis.starter.version>
-        <common.function.version>1.0.0</common.function.version>
-        <lombok.version>1.18.20</lombok.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-
-            <!-- mybatis启动器依赖 -->
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.starter.version}</version>
-            </dependency>
-
-            <!-- 自定义的通用工具类 -->
-            <dependency>
-                <groupId>AuD.common</groupId>
-                <artifactId>common-function</artifactId>
-                <version>${common.function.version}</version>
-            </dependency>
-
-            <!-- lombok依赖 -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <optional>true</optional>
-                <version>${lombok.version}</version>
-            </dependency>
-
-            <!--
-                spring cloud 版本说明:这里仅仅介绍Hoxton 和 "2020.x".
-                之前spring cloud版本命名借由英国地铁站名来命名的,自从Netflix开源的组件闭源后,
-                spring cloud开启自发或借助借助其他开源组件(eg.spring cloud alibaba).
-                2020.x 版本重要变更:
-                1.删除了Netflix大部分组件(eg.zuul),主要留下eureka组件(i.e.服务注册与发现),但是Hoxton依旧保留着Netflix全部组件
-                2.2020.x 依赖springboot 2.4.x & 2.5.x,Hoxton则是2.2.x 和2.3.x
-                - spring boot 2.4.x有个重要的更新内容之一:配置文件发生变化,可以在application.properties import其他的的配置文件.
-                3.spring cloud与spring boot有着版本依赖关系,如果版本不兼容,程序则会发生error。
-            -->
-            <!-- 导入spring-cloud-dependencies依赖 -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- 导入spring-cloud-alibaba-dependencies依赖 -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
-
-
-    <build>
-        <!-- 插件管理 -->
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-
-
-    <!-- 阿里云maven仓库 -->
-    <repositories>
-        <repository>
-            <id>aliyun</id>
-            <name>aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
 
 
 </project>

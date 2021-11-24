@@ -10,16 +10,18 @@
     <version>1.0.0</version>
 
     <modules>
+        <module>1_1_eureka_server_register_8081_H_SR12</module>
+        <module>1_2_eureka_client_provider_stock_9001</module>
+        <module>1_3_eureka_client_consumer_order_9002</module>
     </modules>
 
-    <!--
-        Note:
-        1.spring cloud Hoxton 对应的springboot版本是 小于等于 2.3.x。(使用2.4.x会报错)
-        2.spring cloud 2020.x 对应的springboot版本是 大于等于 2.4.x,并且移除了Netflix部分组件(eg.zuul等)
-         - 关于上述内容可以参加spring cloud 2020.x发布特性(GitHub)
-    -->
+
     <description>this pom is only model manage config</description>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
 
 </project>
